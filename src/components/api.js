@@ -327,3 +327,87 @@ export const addComment = async (ticketId, comment) => {
     timestamp: new Date().toISOString()
   };
 };
+
+// RACI Matrix API functions
+export const fetchRaciMatrix = async (countryCode) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/raci-matrix/${countryCode}`, { 
+      mode: 'cors' 
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching RACI Matrix:', error);
+    throw error;
+  }
+};
+
+export const updateRaciMatrix = async (countryCode, raciMatrix) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/raci-matrix/${countryCode}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(raciMatrix),
+      mode: 'cors'
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error updating RACI Matrix:', error);
+    throw error;
+  }
+};
+
+// SLA Configuration API functions
+export const fetchSlaConfig = async (countryCode) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/sla-config/${countryCode}`, { 
+      mode: 'cors' 
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching SLA configuration:', error);
+    throw error;
+  }
+};
+
+export const updateSlaConfig = async (countryCode, slaConfig) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/sla-config/${countryCode}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(slaConfig),
+      mode: 'cors'
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error updating SLA configuration:', error);
+    throw error;
+  }
+};

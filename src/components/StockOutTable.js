@@ -8,7 +8,8 @@ import LoginModal from './LoginModal';
 import TicketSystem from './TicketSystem';
 import TopBar from './TopBar';
 import AIModels from './AIModels';
-import SupportChatbot from './SupportChatbot';
+//import SupportChatbot from './SupportChatbot';
+import SupportChatbotV2 from './SupportChatbotV2';
 
 const StockOutTable = () => {
   // Check for existing authentication in localStorage
@@ -268,7 +269,7 @@ const StockOutTable = () => {
       />
       
       {/* Support Chatbot - always visible */}
-      <SupportChatbot />
+      <SupportChatbotV2 />
       
       {/* Only show the dashboard content if authenticated */}
       {isAuthenticated && (

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchTickets } from './api';
 import TicketCreateModal from './TicketCreateModal';
 import TicketDetailModal from './TicketDetailModal';
+import { Link } from 'react-router-dom';
 
 const TicketSystem = ({ userRole, userEmail, countryCode = null }) => {
   const [tickets, setTickets] = useState([]);
@@ -128,15 +129,27 @@ const TicketSystem = ({ userRole, userEmail, countryCode = null }) => {
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-gray-800">Ticket Management System</h2>
         
-        {/* Only show create button if user has permission */}
-        {(userRole === 'Country Office' || userRole === 'UNICEF' || userRole === 'GAVI' || userRole === 'Administrator') && (
-          <button
-            onClick={() => setShowCreateModal(true)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Create New Ticket
-          </button>
-        )}
+        <div className="flex gap-4">
+          {/* Only show create button if user has permission */}
+          {(userRole === 'Country Office' || userRole === 'UNICEF' || userRole === 'GAVI' || userRole === 'Administrator') && (
+            <button
+              onClick={() => setShowCreateModal(true)}
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+            >
+              Create New Ticket
+            </button>
+          )}
+          
+          {/* Show admin panel link for administrators */}
+          {userRole === 'Administrator' && (
+            <Link
+              to="/ticket-admin"
+              className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded"
+            >
+              Admin Panel
+            </Link>
+          )}
+        </div>
       </div>
       
       {/* Filters */}
