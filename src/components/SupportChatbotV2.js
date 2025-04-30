@@ -40,7 +40,7 @@ const SupportChatbotV2 = () => {
         
         // Initialize LangSmith client
         const client = new Client({
-          apiKey: "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",
+          apiKey: process.env.LANGCHAIN_API_KEY,
           apiUrl: "https://api.smith.langchain.com",
         });
 
@@ -106,6 +106,8 @@ const SupportChatbotV2 = () => {
                          `(Source: ${result.metadata?.filename || "unknown"})`;
                 }).join("\n\n");
 
+                // Return the results directly since they are already properly formatted
+                return data.results.join("\n\n");
               } catch (error) {
                 console.error('Document search error:', error);
                 throw error;
