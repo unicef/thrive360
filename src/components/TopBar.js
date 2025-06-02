@@ -129,6 +129,16 @@ const TopBar = ({ activeTab, setActiveTab, userRole, handleLogout, countryCode }
               >
                 Temperature (RTMD)
               </button>
+              <button
+                className={`py-1 px-2 text-xs rounded-t-lg ${
+                  activeTab === 'route'
+                    ? 'font-medium text-indigo-700 border-b-2 border-indigo-500 bg-white shadow-sm'
+                    : 'text-gray-500 hover:text-indigo-500 hover:bg-white/50'
+                }`}
+                onClick={() => setActiveTab('route')}
+              >
+                Route
+              </button>
             </div>
           </div>
           

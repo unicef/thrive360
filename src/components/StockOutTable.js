@@ -8,6 +8,7 @@ import LoginModal from './LoginModal';
 import TicketSystem from './TicketSystem';
 import TopBar from './TopBar';
 import AIModels from './AIModels';
+import RouteOptimization from './RouteOptimization';
 //import SupportChatbot from './SupportChatbot';
 import SupportChatbotV2 from './SupportChatbotV2';
 
@@ -422,6 +423,9 @@ const StockOutTable = () => {
               </div>
             </div>
           )}
+
+          {/* Route Optimization Tab */}
+          {activeTab === 'route' && <RouteOptimization />}
 
           {/* Dashboard Tab */}
           {activeTab === 'dashboard' && (
