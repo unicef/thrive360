@@ -75,7 +75,7 @@ const SupportChatbotV2 = () => {
             func: async (input) => {
               try {
                 setCurrentTool("document_search");
-                const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+                const apiUrl = process.env.REACT_APP_API_URL || 'http://54.221.239.111:5001';
                 const response = await fetch(`${apiUrl}/api/query`, {
                   method: 'POST',
                   headers: { 
@@ -214,7 +214,7 @@ const SupportChatbotV2 = () => {
             func: async (input) => {
               try {
                 setCurrentTool("database_query");
-                const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+                const apiUrl = process.env.REACT_APP_API_URL || 'http://54.221.239.111:5001';
                 const response = await fetch(`${apiUrl}/api/db-query`, {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
