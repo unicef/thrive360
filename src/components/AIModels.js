@@ -5,7 +5,10 @@ const AIModels = () => {
     <div className="bg-white shadow-md rounded-lg p-4">
       <h2 className="text-xl font-bold text-gray-800 mb-4">THRIVE360 AI Models</h2>
       
-      {/* Introduction Section */}
+      {/* Introduction Section 
+      Some Technical terms in this section with meanings or documentation links:
+      1) Machine Learning-"https://www.ibm.com/cloud/learn/machine-learning"
+      */}
       <div className="mb-6">
         <div className="flex items-center mb-4">
           <div className="bg-purple-100 p-2 rounded-full mr-3">
@@ -19,7 +22,13 @@ const AIModels = () => {
         <p className="text-gray-700">These models identify various risk situations including under-stress stocks, cold chain issues, pipeline anomalies, and potential impacts from outbreaks.</p>
       </div>
       
-      {/* Goals Section */}
+      {/* Goals Section 
+      Some Technical terms in this section with meanings or documentation links:
+      1) Stock-Out - A supply chain term referring to inventory running out.
+      2) Cold Chain - A temperature-controlled supply chain for sensitive goods like vaccines.
+      3) Pipeline Anomalies - Disruptions or irregularities in supply chain processes.
+      4) Seasonal Variations - Fluctuations in supply/demand influenced by seasons.
+      */}
       <div className="mb-6">
         <h3 className="text-lg font-semibold mb-3 border-b pb-2">Goals of the Models</h3>
         <ul className="list-disc pl-5 space-y-2 text-gray-700">
@@ -31,7 +40,14 @@ const AIModels = () => {
         </ul>
       </div>
       
-      {/* Model Accuracy Table */}
+      {/* Model Accuracy Table 
+      Some Technical terms in this section with meanings or documentation links:
+      1) Model Evaluation Metrics - "https://www.geeksforgeeks.org/metrics-for-machine-learning-model/"
+      2) Accuracy - The ratio of correctly predicted observations to total observations.
+      3) Precision - The ratio of true positive observations to predicted positives.
+      4) Recall - The ratio of true positives to actual positives.
+      5) F1-Score - Harmonic mean of precision and recall.
+      */}
       <div className="mb-6">
         <h3 className="text-lg font-semibold mb-3 border-b pb-2">Model Accuracy Metrics</h3>
         <div className="overflow-x-auto">
@@ -94,7 +110,10 @@ const AIModels = () => {
         <p className="text-sm text-gray-600 mt-2">Model performance based on 80/20 train-test split with cross-validation.</p>
       </div>
       
-      {/* Methodology Section */}
+      {/* Methodology Section 
+      Some Technical terms in this section with meanings or documentation links:
+      1) Data Preprocessing-"https://www.tpointtech.com/data-preprocessing-machine-learning"
+      */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="bg-purple-50 p-4 rounded-lg">
           <h3 className="text-md font-semibold mb-3 text-purple-800">Data Preprocessing</h3>
@@ -117,7 +136,16 @@ const AIModels = () => {
         </div>
       </div>
       
-      {/* ML Solutions Section */}
+      {/* ML Solutions Section
+      Some Technical terms in this section with meanings or documentation links:
+      1) One-Hot Encoding-"https://medium.com/@heyamit10/one-hot-encoding-explained-0b0130ccd78e"
+      2) SMOTE-"https://www.geeksforgeeks.org/smote-for-imbalanced-classification-with-python/"
+      3) Standard Scaling-"https://www.analyticsvidhya.com/blog/2020/04/feature-scaling-machine-learning-normalization-standardization/"
+      4) Random Forest Classifier-"https://www.geeksforgeeks.org/random-forest-classifier-using-scikit-learn/"
+      5) Imputation - Filling missing data with substitute values.
+      6) Median Imputation - Replacing missing numeric values with the median.
+      7) Categorical Imputation - Replacing missing categorical values with a constant.
+      */}
       <div className="mb-6">
         <h3 className="text-lg font-semibold mb-3 border-b pb-2">Machine Learning Solutions Applied</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -144,7 +172,10 @@ const AIModels = () => {
         </div>
       </div>
       
-      {/* Feature Importance */}
+      {/* Feature Importance
+      Some Technical terms in this section with meanings or documentation links: 
+      1) Feature Importance -"https://builtin.com/data-science/feature-importance"
+      */}
       <div className="mb-4">
         <h3 className="text-lg font-semibold mb-3 border-b pb-2">Feature Importance Analysis</h3>
         <div className="bg-white p-4 rounded-lg border border-gray-200">
