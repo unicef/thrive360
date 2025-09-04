@@ -13,9 +13,9 @@ import RouteOptimization from './RouteOptimization';
 import SupportChatbotV2 from './SupportChatbotV2';
 
 const StockOutTable = () => {
-  // Check for existing authentication in localStorage
+  // Check for existing authentication in sessionStorage
   const checkExistingAuth = () => {
-    const storedAuth = localStorage.getItem('stockOutDashboardAuth');
+    const storedAuth = sessionStorage.getItem('stockOutDashboardAuth'); // Use sessionStorage
     if (storedAuth) {
       try {
         const authData = JSON.parse(storedAuth);
@@ -24,19 +24,20 @@ const StockOutTable = () => {
           return true;
         } else {
           // Clear expired authentication
-          localStorage.removeItem('stockOutDashboardAuth');
+          sessionStorage.removeItem('stockOutDashboardAuth');
         }
       } catch (e) {
         // If there's an error parsing, clear the invalid data
-        localStorage.removeItem('stockOutDashboardAuth');
+        sessionStorage.removeItem('stockOutDashboardAuth');
       }
     }
     return false;
   };
 
-  // Initialize authentication state from localStorage
-  const [isAuthenticated, setIsAuthenticated] = useState(checkExistingAuth());
-  const [showLoginModal, setShowLoginModal] = useState(!checkExistingAuth());
+  // Initialize authentication state from sessionStorage
+  const isAuth = checkExistingAuth();
+  const [isAuthenticated, setIsAuthenticated] = useState(isAuth);
+  const [showLoginModal, setShowLoginModal] = useState(!isAuth);
   
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -222,7 +223,7 @@ const StockOutTable = () => {
       // Set user role based on login (in a real app, this would come from the authentication response)
       setUserRole(role);
       
-      // Store authentication in localStorage with 30-day expiry
+      // Store authentication in sessionStorage with 30-day expiry
       const thirtyDaysInMs = 30 * 24 * 60 * 60 * 1000;
       const authData = {
         authenticated: true,
@@ -241,7 +242,7 @@ const StockOutTable = () => {
       setUserEmail(authData.userEmail);
       setCountryCode(authData.countryCode);
       
-      localStorage.setItem('stockOutDashboardAuth', JSON.stringify(authData));
+      sessionStorage.setItem('stockOutDashboardAuth', JSON.stringify(authData)); // Use sessionStorage
     }
   };
 
@@ -249,7 +250,7 @@ const StockOutTable = () => {
   const handleLogout = () => {
     setIsAuthenticated(false);
     setShowLoginModal(true);
-    localStorage.removeItem('stockOutDashboardAuth');
+    sessionStorage.removeItem('stockOutDashboardAuth'); // Use sessionStorage
   };
 
   // Function to create a ticket for specific store
