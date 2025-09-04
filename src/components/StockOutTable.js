@@ -35,8 +35,9 @@ const StockOutTable = () => {
   };
 
   // Initialize authentication state from localStorage
-  const [isAuthenticated, setIsAuthenticated] = useState(checkExistingAuth());
-  const [showLoginModal, setShowLoginModal] = useState(!checkExistingAuth());
+const isAuth = checkExistingAuth();
+const [isAuthenticated, setIsAuthenticated] = useState(isAuth);
+const [showLoginModal, setShowLoginModal] = useState(!isAuth);
   
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
